@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CreateheroController;
+use App\Http\Controllers\MyheroesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/myheroes', [MyheroesController::class, 'index'])->name('myheroes');
+
+Route::get('/myheroes/createhero', [CreateheroController::class, 'index'])->name('createhero');
+Route::post('/myheroes/createhero', [CreateheroController::class, 'store']);
